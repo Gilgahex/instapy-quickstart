@@ -42,5 +42,6 @@ with smart_run(session):
             i.replace("'",'')
         tags.update(lemmas)
     #Take random sample of 10 words in your set of hashtags
-    sample = random.choice(tags, 10)
+    sample = random.choices(list(tags), k=10)
+    print(sample)
     session.like_by_tags(sample, amount=350)
